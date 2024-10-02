@@ -1,0 +1,27 @@
+@import "../../App.scss";
+
+footer {
+	margin-top: 100px;
+	padding: 20px;
+	background-color: $lightblue;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100px;
+
+	img {
+		background-color: lightblue;
+		height: inherit;
+		border-radius: 50%;
+	}
+	.creator {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 5px;
+		.x {
+			color: red;
+			font-size: 1.5rem;
+		}
+	}
+}

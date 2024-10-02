@@ -1,0 +1,100 @@
+@import "../../App.scss";
+
+.auth {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: $linear;
+	gap: 20px;
+	.form {
+		background-color: #fff;
+		border-radius: 10px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-evenly;
+		border: 1px solid white;
+		box-shadow: 3px 3px rgb(173, 173, 173);
+		padding: 10px;
+		min-height: 300px;
+		width: 400px;
+
+		.value {
+			margin-top: 10px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex;
+			justify-content: center;
+			width: 100%;
+		}
+		label {
+			font-size: 14px;
+		}
+		input {
+			padding: 5px;
+			outline: none;
+			border: none;
+			border-bottom: 1px solid rgba($color: $darkblue, $alpha: 0.5);
+		}
+		.error {
+			align-self: center;
+			font-size: small;
+			color: red;
+			font-weight: bold;
+			opacity: 0;
+			transform: translateX(20px);
+			animation: fadeIn 0.5s forwards;
+		}
+
+		@keyframes fadeIn {
+			0% {
+				opacity: 0;
+				transform: translateX(-30px);
+			}
+			25% {
+				opacity: 0.5;
+				transform: translateX(30px);
+			}
+			50% {
+				opacity: 0.5;
+				transform: translateX(-30px);
+			}
+			100% {
+				opacity: 1;
+				transform: translateX(0);
+			}
+		}
+
+		.button {
+			width: 50%;
+			align-self: center;
+			padding: 10px;
+			border-radius: 5px;
+			background-color: $lightblue;
+			border: none;
+			cursor: pointer;
+			transition: transform 0.2s ease-in-out;
+			&:active {
+				transform: scale(0.95);
+			}
+			&:hover {
+				background-color: $darkblue;
+			}
+		}
+		span {
+			align-self: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			.sign {
+				font-size: 14px;
+				margin-right: auto;
+				color: blue;
+			}
+		}
+	}
+}

@@ -1,5 +1,21 @@
+$lightblue: #bcebff;
+$lightpink: #ffaece;
+$darkblue: #007cb2;
+$darkpink: #d80057;
+$linear: linear-gradient(0.25turn, $lightblue, $lightpink);
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: "Poppins";
+}
+.app {
+	display: flex;
+	justify-content: center;
+	.container {
+		width: 1024px;
+		display: flex;
+		justify-content: space-between;
+	}
 }

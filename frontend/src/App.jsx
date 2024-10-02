@@ -21,15 +21,15 @@ function App() {
 	return (
 		<>
 			<div className='app'>
-				<div className='container'>
+				<div>
 					<Routes>
 						<Route path='/' element={<Layout />}>
-							<Route path='/' element={<Home />}></Route>
-							<Route path='/post/:id' element={<Single />}></Route>
-							<Route path='/write' element={<Write />}></Route>
+							<Route index element={<Home />} />
+							<Route path='post/:id' element={<Single />} />
+							<Route path='write' element={<Write />} />
 						</Route>
-						<Route path='/login' element={<Login />}></Route>
-						<Route path='/register' element={<Register />}></Route>
+						<Route path='login' element={<Login />} />
+						<Route path='register' element={<Register />} />
 					</Routes>
 				</div>
 			</div>

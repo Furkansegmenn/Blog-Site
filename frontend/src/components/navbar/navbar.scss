@@ -1,0 +1,51 @@
+@import "../../App.scss";
+
+.navbar {
+	.container {
+		.logo {
+			margin-top: 15px;
+			img {
+				z-index: 1;
+				width: 100px;
+			}
+		}
+	}
+	.links {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		.link {
+			text-decoration: none;
+			color: inherit;
+			h5 {
+				font-size: 16px;
+				color: rgb(108, 108, 108);
+				font-weight: 300;
+			}
+		}
+		span {
+			cursor: pointer;
+		}
+		.write {
+			background-color: $lightblue;
+			border-radius: 50%;
+			height: 50px;
+			width: 50px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			.pen {
+				font-size: 20px;
+				margin-top: 5px;
+				color: $darkblue;
+			}
+			&:hover {
+				background-color: $lightpink;
+				.pen {
+					color: $darkpink;
+				}
+			}
+		}
+	}
+}
