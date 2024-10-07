@@ -7,9 +7,12 @@ const Navbar = () => {
 	return (
 		<div className='navbar'>
 			<div className='container'>
-				<div className='logo'>
-					<img src={Logo} alt='' />
-				</div>
+				<Link to='/'>
+					<div className='logo'>
+						<img src={Logo} alt='' />
+					</div>
+				</Link>
+
 				<div className='links'>
 					<Link className='link' to='/?cat=art'>
 						<h5>ART</h5>
@@ -31,11 +34,11 @@ const Navbar = () => {
 					</Link>
 					<span>Furkan</span>
 					<span>Logout</span>
-					<span className='write'>
-						<Link className='link' to='/write' title='Write'>
+					<Link className='link' to='/write' title='Write'>
+						<span className='write'>
 							<FaPen className='pen'></FaPen>
-						</Link>
-					</span>
+						</span>
+					</Link>
 				</div>
 			</div>
 		</div>

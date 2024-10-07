@@ -1,6 +1,7 @@
 @import "../../App.scss";
 
 .navbar {
+	border-bottom: 1px solid #bebebe;
 	.container {
 		.logo {
 			margin-top: 15px;
@@ -23,29 +24,28 @@
 				color: rgb(108, 108, 108);
 				font-weight: 300;
 			}
+			.write {
+				background-color: $lightblue;
+				border-radius: 50%;
+				height: 50px;
+				width: 50px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				.pen {
+					font-size: 20px;
+					color: $darkblue;
+				}
+				&:hover {
+					background-color: $lightpink;
+					.pen {
+						color: $darkpink;
+					}
+				}
+			}
 		}
 		span {
 			cursor: pointer;
-		}
-		.write {
-			background-color: $lightblue;
-			border-radius: 50%;
-			height: 50px;
-			width: 50px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			.pen {
-				font-size: 20px;
-				margin-top: 5px;
-				color: $darkblue;
-			}
-			&:hover {
-				background-color: $lightpink;
-				.pen {
-					color: $darkpink;
-				}
-			}
 		}
 	}
 }
