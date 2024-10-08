@@ -10,11 +10,15 @@ $linear: linear-gradient(0.25turn, $lightblue, $lightpink);
 	box-sizing: border-box;
 	font-family: "Poppins";
 }
+body {
+}
 .app {
 	display: flex;
 	justify-content: center;
+
 	.container {
 		width: 1024px;
+
 		display: flex;
 		justify-content: space-between;
 	}
