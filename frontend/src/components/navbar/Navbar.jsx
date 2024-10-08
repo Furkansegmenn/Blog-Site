@@ -32,6 +32,8 @@ const Navbar = () => {
 					<Link className='link' to='/?cat=food'>
 						<h5>FOOD</h5>
 					</Link>
+				</div>
+				<div className='right'>
 					<span>Furkan</span>
 					<span>Logout</span>
 					<Link className='link' to='/write' title='Write'>
