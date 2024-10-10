@@ -3,6 +3,7 @@ import postRoutes from "./routes/posts.js";
 import userRoutes from "./routes/users.js";
 import authRoutes from "./routes/auth.js";
 import cors from "cors";
+
 const app = express();
 
 app.use(express.json());

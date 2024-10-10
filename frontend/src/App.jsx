@@ -24,7 +24,7 @@ function App() {
 				<div>
 					<Routes>
 						<Route path='/' element={<Layout />}>
-							<Route index element={<Home />} />
+							<Route path='/' element={<Home />} />
 							<Route path='post/:id' element={<Single />} />
 							<Route path='write' element={<Write />} />
 						</Route>

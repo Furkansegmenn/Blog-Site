@@ -20,7 +20,7 @@ const Register = () => {
 		e.preventDefault();
 
 		try {
-			const res = await axios.post("http://localhost:8080/api/auth/register", inputs);
+			const res = await axios.post("/api/auth/register", inputs);
 			console.log(res);
 			navigate("/login");
 		} catch (err) {
@@ -31,7 +31,7 @@ const Register = () => {
 	return (
 		<div className='auth'>
 			<h1>Register</h1>
-			<form className='form'>
+			<form className='register-form '>
 				<div className='value'>
 					<label htmlFor='username'>Username</label>
 					<input required type='text' name='username' onChange={handleChange} />
@@ -47,7 +47,7 @@ const Register = () => {
 
 				{err && <p className='error'>{err}</p>}
 
-				<button className=' button' onClick={handleSubmit}>
+				<button className='register' onClick={handleSubmit}>
 					Register
 				</button>
 				<span className='span'>

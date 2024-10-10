@@ -1,6 +1,6 @@
 import { db } from "../db.js";
 import bcrypt from "bcrypt";
-
+import jwt from "jsonwebtoken";
 export const register = (req, res) => {
 	if (!req.body.username || !req.body.email || !req.body.password) {
 		return res.status(400).json("Please fill all fields"); // Uygun hata mesajı
@@ -25,5 +25,15 @@ export const register = (req, res) => {
 		});
 	});
 };
-export const login = (req, res) => {};
+export const login = (req, res) => {
+	const q = "SELECT * FROM users WHERE username = ?";
+	db.query(q, [req.body.username], (err, data) => {
+		if (err) return res.json(err);
+		if (data.length === 0) return res.status(404).json("User not found");
+		const isPasswordCorrect = bcrypt.compareSync(req.body.password, data[0].password);
+		if (!isPasswordCorrect) return res.status(400).json("Wrong username or password");
+
+		return res.status(200).json("Login successful");
+	});
+};
 export const logout = (req, res) => {};
