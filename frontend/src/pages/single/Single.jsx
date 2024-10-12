@@ -1,18 +1,35 @@
 import { CiEdit } from "react-icons/ci";
 import { FaTrashAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./single.scss";
 import Menu from "../../components/menu/menu.jsx";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Single = () => {
+	const [post, setPost] = useState({});
+
+	const location = useLocation();
+
+	const postId = location.pathname.split("/")[2];
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const res = await axios.get(`/api/posts/${postId}`);
+				setPost(res.data);
+			} catch (error) {
+				console.log(error);
+			}
+		};
+		fetchData();
+	}, [postId]);
+
 	return (
 		<div className='container'>
 			<div className='single'>
 				<div className='content'>
-					<img
-						src='https://images.unsplash.com/file-1707883121023-8e3502977149image?w=416&dpr=2&auto=format&fit=crop&q=60'
-						alt=''
-					/>
+					<img src={post?.img} alt='' />
 					<div className='user'>
 						<div className='left'>
 							<img
@@ -20,7 +37,7 @@ const Single = () => {
 								alt=''
 							/>
 							<div className='info'>
-								<span>Furkan</span>
+								<span>furkan</span>
 								<p>Posted 2 days ago</p>
 							</div>
 						</div>
