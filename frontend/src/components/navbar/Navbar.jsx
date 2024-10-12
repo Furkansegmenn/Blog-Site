@@ -2,8 +2,12 @@ import "./navbar.scss";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/Segmen.png";
 import { FaPen } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = () => {
+	const { logout, currentUser } = useContext(AuthContext);
+
 	return (
 		<div className='navbar'>
 			<div className='container'>
@@ -34,8 +38,14 @@ const Navbar = () => {
 					</Link>
 				</div>
 				<div className='right'>
-					<span>Furkan</span>
-					<span>Logout</span>
+					<span>{currentUser?.username}</span>
+					{currentUser ? (
+						<span onClick={logout}>Logout</span>
+					) : (
+						<Link className='link' to='/login'>
+							Login
+						</Link>
+					)}
 					<Link className='link' to='/write' title='Write'>
 						<span className='write'>
 							<FaPen className='pen'></FaPen>

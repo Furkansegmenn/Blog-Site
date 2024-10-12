@@ -3,10 +3,12 @@ import postRoutes from "./routes/posts.js";
 import userRoutes from "./routes/users.js";
 import authRoutes from "./routes/auth.js";
 import cors from "cors";
+import cooikeParser from "cookie-parser";
 
 const app = express();
 
 app.use(express.json());
+app.use(cooikeParser());
 app.use(
 	cors({
 		origin: "http://localhost:5173", // Frontend'in çalıştığı URL

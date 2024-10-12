@@ -16,15 +16,14 @@
 		align-items: center;
 		justify-content: space-between;
 		gap: 25px;
-
-		.link {
-			text-decoration: none;
-			color: inherit;
-			h5 {
-				font-size: 16px;
-				color: rgb(108, 108, 108);
-				font-weight: 300;
-			}
+	}
+	.link {
+		text-decoration: none;
+		color: inherit;
+		h5 {
+			font-size: 16px;
+			color: rgb(108, 108, 108);
+			font-weight: 300;
 		}
 	}
 	.right {

@@ -33,7 +33,21 @@ export const login = (req, res) => {
 		const isPasswordCorrect = bcrypt.compareSync(req.body.password, data[0].password);
 		if (!isPasswordCorrect) return res.status(400).json("Wrong username or password");
 
-		return res.status(200).json("Login successful");
+		const token = jwt.sign({ id: data[0].id }, "jwtkey");
+		const { password, ...other } = data[0];
+		res.cookie("acces_token", token, {
+			httpOnly: true,
+		})
+			.status(200)
+			.json(other);
 	});
 };
-export const logout = (req, res) => {};
+
+export const logout = (req, res) => {
+	res.clearCookie("acces_token", {
+		sameSite: "none",
+		secure: true,
+	})
+		.status(200)
+		.json("User has been logged out");
+};
