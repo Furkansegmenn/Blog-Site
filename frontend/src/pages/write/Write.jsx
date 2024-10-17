@@ -46,7 +46,7 @@ const Write = () => {
 						desc: value,
 						cat,
 						img: imgUrl,
-						date: moment(Date.now()).format("YYYY-MM-DD HH:mm.ss"),
+						date: moment(Date.now()).local().format("YYYY-MM-DD HH:mm:ss"),
 				  });
 			navigate("/");
 		} catch (error) {
@@ -72,6 +72,7 @@ const Write = () => {
 				<div className='menu'>
 					<div className='item'>
 						<h1>Publish</h1>
+
 						<span>
 							<b>Status: </b>Draft
 						</span>
@@ -90,7 +91,11 @@ const Write = () => {
 						</label>
 						<div className='buttons'>
 							<button>Save as a draft</button>
-							<button onClick={handleClick}>Update</button>
+							{state ? (
+								<button onClick={handleClick}>Update</button>
+							) : (
+								<button onClick={handleClick}>Publish</button>
+							)}
 						</div>
 					</div>
 					<div className='item'>

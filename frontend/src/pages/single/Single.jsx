@@ -52,7 +52,7 @@ const Single = () => {
 							{post.userImg && <img src={post.userImg} alt='' />}
 							<div className='info'>
 								<span>{post.username}</span>
-								<p>Posted {moment(post.date).fromNow()} </p>
+								<p>Posted {moment(post.date).local().fromNow()} </p>
 							</div>
 						</div>
 
