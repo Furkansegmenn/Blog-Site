@@ -2,13 +2,16 @@
 
 .container {
 	.posts {
+		width: 100%;
 		margin-top: 20px;
 		display: flex;
 		flex-direction: column;
 		gap: 8rem;
 		.post {
+			width: 100%;
 			display: flex;
 			gap: 100px;
+			justify-content: space-between;
 			&:nth-child(2n + 1) {
 				flex-direction: row-reverse;
 			}
@@ -33,6 +36,7 @@
 					color: inherit;
 					h1 {
 						font-size: 36px;
+						margin-bottom: 20px;
 					}
 				}
 				p {

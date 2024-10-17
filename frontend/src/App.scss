@@ -16,6 +16,7 @@ $linear: linear-gradient(0.25turn, $lightblue, $lightpink);
 
 	.container {
 		width: 1024px;
+		overflow-x: hidden;
 
 		display: flex;
 		justify-content: space-between;

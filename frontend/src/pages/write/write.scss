@@ -7,8 +7,10 @@
 		width: 100%;
 		.content {
 			flex: 5;
+			overflow-x: hidden;
 			.editorcontainer {
 				height: 312px;
+
 				::-webkit-scrollbar {
 					width: 8px;
 				}

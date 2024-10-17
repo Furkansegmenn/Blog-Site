@@ -37,12 +37,16 @@ const Single = () => {
 			console.log(error);
 		}
 	};
+	const getText = (html) => {
+		const doc = new DOMParser().parseFromString(html, "text/html");
+		return doc.body.textContent;
+	};
 
 	return (
 		<div className='container'>
 			<div className='single'>
 				<div className='content'>
-					<img src={post?.img} alt='' />
+					<img src={`../upload/${post?.img}`} alt='' />
 					<div className='user'>
 						<div className='left'>
 							{post.userImg && <img src={post.userImg} alt='' />}
@@ -54,7 +58,7 @@ const Single = () => {
 
 						{currentUser?.username === post.username && (
 							<div className='icons'>
-								<Link className='link' to='/write?edit=2'>
+								<Link className='link' to={`/write?edit=${post.id}`} state={post}>
 									<CiEdit className='edit' />
 								</Link>
 								<FaTrashAlt className='trash' onClick={handleDelete} />
@@ -62,7 +66,7 @@ const Single = () => {
 						)}
 					</div>
 					<h1>{post.title}</h1>
-					{post.desc}
+					{getText(post.desc)}
 				</div>
 				<Menu cat={post.cat} />
 			</div>

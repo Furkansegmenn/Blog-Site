@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./menu.scss";
 import axios from "axios";
 
+// eslint-disable-next-line react/prop-types
 const Menu = ({ cat }) => {
 	const [posts, setPosts] = useState([]);
 
@@ -22,7 +23,7 @@ const Menu = ({ cat }) => {
 			<h1>Other Posts you may like</h1>
 			{posts.map((post) => (
 				<div className='post' key={post.id}>
-					<img src={post.img} />
+					<img src={`../upload/${post.img}`} />
 					<h2>{post.title}</h2>
 					<button>Read More</button>
 				</div>
